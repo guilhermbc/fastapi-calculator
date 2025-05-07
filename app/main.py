@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from app.models import OperationRequest, OperationResponse
-from calculadora_lib import add, subtract, multiply, divide
+from calculator_lib import add, subtract, multiply, divide, sqrroot, power
 
 app = FastAPI(
     title="FastAPI Calculator",
@@ -30,3 +30,16 @@ def divide_numbers(request: OperationRequest):
         return OperationResponse(result=result)
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
+    
+@app.post("/sqr_root", response_model=OperationResponse, summary="Raiz Quadrada", description="Calcula a raiz quadrada de um número.")
+def calculate_sqr_root(request: OperationRequest):
+    try:
+        result = sqrroot(request.a)
+        return OperationResponse(result=result)
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    
+@app.post("/power", response_model=OperationResponse, summary="Potência", description="Calcula a potência de um número elevado a outro.")
+def calculate_power(request: OperationRequest):
+    result = power(request.a, request.b)
+    return OperationResponse(result=result)
