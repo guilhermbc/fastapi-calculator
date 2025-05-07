@@ -1,6 +1,6 @@
 # 📟 FastAPI Calculator + Calculator-Lib
 
-[![Test and Deploy Workflow](https://github.com/paulossjunior/calculadora-fastapi-lib/actions/workflows/test-and-deploy.yml/badge.svg)](https://github.com/paulossjunior/calculadora-fastapi-lib/actions)
+[![Test and Deploy Workflow](https://github.com/guilhermbc/fastapi-calculator/actions/workflows/test-and-deploy.yml/badge.svg)](https://github.com/guilhermbc/fastapi-calculator/actions)
 
 Projeto completo usando **Python**, **FastAPI**, **Docker**, **GitHub Packages** e **GitHub Actions**!
 
